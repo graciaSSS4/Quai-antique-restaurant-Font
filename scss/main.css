@@ -15,6 +15,11 @@ footer.footer{
     bottom: 0;
     width: 100%;
 }
+
+p{
+  font-family: $font-family-serif;
+  font-size: 18px;
+}
 /*!
  * Bootstrap  v5.3.8 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
