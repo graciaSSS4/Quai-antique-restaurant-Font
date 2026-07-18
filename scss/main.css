@@ -20,6 +20,36 @@ p{
   font-family: $font-family-serif;
   font-size: 18px;
 }
+
+.main-plate{
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../Image/IMAGE_quai-antique-images_2026-07-18_1108/main\ plate.jpg);
+    background-size: cover;
+    filter: brightness(0.3);
+  }
+    *{
+      /*Positionner les éléments devant le ::before*/
+      position: relative;
+    }
+  
+  
+    .main-plate-content{
+
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+} 
 /*!
  * Bootstrap  v5.3.8 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
