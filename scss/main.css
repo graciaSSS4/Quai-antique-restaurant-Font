@@ -1,58 +1,5 @@
 @charset "UTF-8";
 @import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
-
-html{
-    position:relative ;
-    min-height: 100%;
-}
-main{
-    margin-bottom: 250px;
-}
-
-footer.footer{
-    padding: 15px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-p{
-  font-family: $font-family-serif;
-  font-size: 18px;
-}
-
-.main-plate{
-  position: relative;
-  &::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(../Image/IMAGE_quai-antique-images_2026-07-18_1108/main\ plate.jpg);
-    background-size: cover;
-    filter: brightness(0.3);
-  }
-    *{
-      /*Positionner les éléments devant le ::before*/
-      position: relative;
-    }
-  
-  
-    .main-plate-content{
-
-      height: 300px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    
-} 
- .text-justify{
-        text-align: justify;
-    }
 /*!
  * Bootstrap  v5.3.8 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
@@ -12032,4 +11979,80 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+main {
+  margin-bottom: 250px;
+}
+
+footer.footer {
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+p {
+  font-family: "Hind Madurai", serif;
+  font-size: 18px;
+}
+
+.main-plate {
+  position: relative;
+}
+.main-plate::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../Image/IMAGE_quai-antique-images_2026-07-18_1108/main\ plate.jpg);
+  background-size: cover;
+  filter: brightness(0.3);
+}
+.main-plate * {
+  /*Positionner les éléments devant le ::before*/
+  position: relative;
+}
+.main-plate .main-plate-content {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.image-card {
+  position: relative;
+}
+.image-card img {
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.image-card:hover .titre-image {
+  opacity: 1;
+}
+.image-card:hover img {
+  filter: brightness(0.3);
+}
+.image-card img {
+  transition: all 0.3s;
+}
+.image-card .titre-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.5s;
 }/*# sourceMappingURL=main.css.map */
