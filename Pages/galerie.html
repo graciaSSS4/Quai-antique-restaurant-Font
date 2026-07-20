@@ -7,7 +7,7 @@
     <a href="#" class="btn btn-primary">Ajouter une photo</a>
 </div>
 <div class="container">
-      
+
     <div class="row row-cols-2 row-cols-lg-3">
 
         <div class="col p-3">
@@ -16,8 +16,10 @@
                     class="rounded w-100" />
                 <p class="titre-image">Titre</p>
                 <div class="action-image-buttons">
-                    <button type="button" class="btn btn-outline-light"><i class="bi bi-pencil-square"></i></button>
-                    <button type="button" class="btn btn-outline-light"><i class="bi bi-trash"></i></button>
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                        data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
+                        data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
                 </div>
             </div>
         </div>
@@ -52,10 +54,70 @@
                 <p class="titre-image">Titre</p>
             </div>
         </div>
-        
+
     </div>
     <div class="text-center pt-4">
-            <a href="/reservation" class="btn btn-primary">Réserver</a>
+        <a href="/reservation" class="btn btn-primary">Réserver</a>
+
+    </div>
+</div>
+
+<!-- Modal Edition-->
+<div class="modal fade" id="EditionPhotoModal" tabindex="-1" aria-labelledby="EditionPhotoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="EditionPhotoModalLabel">Edition Photo</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Formulaire d'édition de photo -->
+                <form>
+                    <div class="mb-3">
+                        <label for="NamePhotoInput" class="form-label">Titre</label>
+                        <input type="text" class="form-control" id="NamePhotoInput" placeholder="Salmon coco curry"
+                            name="titre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ImageInput" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="ImageInput" placeholder="Aucun fichier choisi"
+                            name="Image">
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
 
         </div>
+    </div>
+</div>
+
+<!-- Modal Delete-->
+<div class="modal fade" id="DeletePhotoModal" tabindex="-1" aria-labelledby="DeletePhotoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="DeletePhotoModalLabel">Êtes-vous sûr de vouloir supprimer cette photo ?</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Formulaire d'édition de photo -->
+                <form>
+                    <div class="mb-3">
+                        <p>Titre</p>
+                        <img src="../Image/IMAGE_quai-antique-images_2026-07-18_1108/fresh vegetables.jpg" class="rounded w-100"/>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="button" class="btn btn-danger">Supprimer</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
 </div>
