@@ -12058,6 +12058,10 @@ p {
   transition: all 0.5s;
 }
 
-form-label {
+.form-label {
   color: #906427;
+}
+
+.danger {
+  color: red;
 }/*# sourceMappingURL=main.css.map */
