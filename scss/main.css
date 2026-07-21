@@ -12076,4 +12076,10 @@ p {
 
 .danger {
   color: red;
+}
+
+.allreservations a {
+  display: block;
+  color: #292222;
+  padding: 10px;
 }/*# sourceMappingURL=main.css.map */
