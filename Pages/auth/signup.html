@@ -8,25 +8,44 @@
         <div class="mb-3">
             <label for="NomInput" class="form-label">Nom</label>
             <input type="text" class="form-control" id="NomInput" placeholder="Votre nom" name="Nom">
+        <div class="invalid-feedback">
+                Le nom est requis    
+        </div>
         </div>
         <div class="mb-3">
-            <label for="PrénomInput" class="form-label">Prénom</label>
-            <input type="text" class="form-control" id="PrénomInput" placeholder="Votre prénom" name="Prénom">
+            <label for="PrenomInput" class="form-label">Prénom</label>
+            <input type="text" class="form-control" id="PrenomInput" placeholder="Votre prénom" name="Prenom">
+            <div class="invalid-feedback">
+                Le prénom est requis    
+            </div>
         </div>
         <div class="mb-3">
             <label for="EmailInput" class="form-label">Email</label>
             <input type="email" class="form-control" id="EmailInput" placeholder="test@mail.fr" name="Email">
+            <div class="invalid-feedback">
+                Veuillez entrer une adresse mail valide
+            </div>
         </div>
         <div class="mb-3">
             <label for="PasswordInput" class="form-label">Mot de passe</label>
             <input type="password" class="form-control" id="PasswordInput" name="Password">
+            <div class="invalid-feedback">
+                Votre mot de passe doit comporter au moins 8 caractères, dont au moins 1 chiffres, 1 majuscule, 1
+                minuscule et 1 caractère spécial
+            </div>
+            <div class="valid-feedback">
+                Niveau du mot de passe : élevé
+            </div>
         </div>
         <div class="mb-3">
-            <label for="ValidatePasswordInput" class="form-label">Validez votre mot de passe</label>
+            <label for="ValidatePasswordInput" class="form-label">Confirmez votre mot de passe</label>
             <input type="password" class="form-control" id="ValidatePasswordInput" name="Password">
+            <div class="invalid-feedback">
+                Les deux mots de passe ne sont pas identiques !
+            </div>
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-primary">Inscription</button>
+            <button type="submit" class="btn btn-primary" id="btn-validation-inscription">Inscription</button>
         </div>
     </form>
 
