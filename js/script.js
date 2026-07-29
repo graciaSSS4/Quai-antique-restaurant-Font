@@ -3,7 +3,7 @@ const roleCookieName = "role";
 const btnSignout = document.getElementById("btnSignout");
 
 btnSignout.addEventListener("click", signout);
-function getrole() {
+function getRole() {
   return getCookie(roleCookieName);
 }
 
@@ -59,7 +59,7 @@ connected = admin ou client
 */
 function showAndHideElementsForRoles() {
   const userConnected = isConnected();
-  const role = getrole();
+  const role = getRole();
   let allElementsToEdit = document.querySelectorAll("[data-show]");
   allElementsToEdit.forEach((element) => {
     switch (element.dataset.show) {
