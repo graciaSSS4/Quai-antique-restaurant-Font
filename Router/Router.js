@@ -46,10 +46,15 @@ const LoadContentPage = async () => {
   // Ajout du contenu HTML à l'élément avec l'ID "main-page"
   document.getElementById("main-page").innerHTML = html;
 
-  // Ajout du contenu JavaScript
+  // Chargement du script spécifique à la page
   if (actualRoute.pathJS != "") {
-    // Création d'une balise script
-    var scriptTag = document.createElement("script");
+    // Suppression de l'ancien script pour éviter une redéclaration
+    const oldScript = document.getElementById("dynamic-page-script");
+    if (oldScript) oldScript.remove();
+
+    // Création et injection du nouveau script
+    const scriptTag = document.createElement("script");
+    scriptTag.id = "dynamic-page-script";
     scriptTag.setAttribute("type", "text/javascript");
     scriptTag.setAttribute("src", actualRoute.pathJS);
 
