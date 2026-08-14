@@ -7,6 +7,7 @@
   const inputPassword = document.getElementById("PasswordInput");
   const inputValidationPassword = document.getElementById("ValidatePasswordInput");
   const btnValidation = document.getElementById("btn-validation-inscription");
+  const formInscription = document.getElementById("formulaireInscription");
 
   inputNom.addEventListener("keyup", validateForm);
   inputPrenom.addEventListener("keyup", validateForm);
@@ -106,16 +107,24 @@
   }
 
   function InscrireUtilisateur() {
+    //Crée un nouvel objet FormData à partir du formulaire contenu dans la variable "formInscription"
+    const dataForm = new FormData(formInscription);
+
+    const name = dataForm.get("name");
+    // Crée un nouvel objet Headers pour définir les en-têtes de la requête HTTP
     const myHeaders = new Headers();
+    // Ajoute l'en-tête "Content-Type" avec la valeur "application/json"
     myHeaders.append("Content-Type", "application/json");
 
+    // Convertit les données du formulaire en une chaîne JSON
     const raw = JSON.stringify({
-      firstName: "test fetch",
-      lastName: "test fetch",
-      email: "testdepuisQauiAntique@gmail.com",
-      password: "123",
+      firstName: dataForm.get("nom"),
+      lastName: dataForm.get("prenom"),
+      email: dataForm.get("email"),
+      password: dataForm.get("password"),
     });
 
+    // Configure les options de la requête HTTP
     const requestOptions = {
       method: "POST",
       headers: myHeaders,
@@ -124,7 +133,7 @@
     };
 
     fetch("http://127.0.0.1:8000/api/registration", requestOptions)
-      .then((response) => response.text())
+      .then((response) => response.json())
       .then((result) => console.log(result))
       .catch((error) => console.error(error));
   }
