@@ -133,8 +133,19 @@
     };
 
     fetch("http://127.0.0.1:8000/api/registration", requestOptions)
-      .then((response) => response.json())
-      .then((result) => console.log(result))
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          alert("Vos informations ne permettent pas de vous inscrire");
+          return;
+        }
+      })
+      //excution fléchée pour plusieurs lignes
+      .then((result) => {
+        alert("Insciption validée! Connectez-vous àvotre compte!");
+        document.location.href = "/signin";
+      })
       .catch((error) => console.error(error));
   }
 })();
