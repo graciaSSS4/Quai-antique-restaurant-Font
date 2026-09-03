@@ -39,7 +39,6 @@
         } else {
           inputEmail.classList.add("is-invalid");
           inputPassword.classList.add("is-invalid"); // red
-          return;
         }
       })
 

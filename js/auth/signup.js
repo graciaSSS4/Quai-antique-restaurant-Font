@@ -110,7 +110,6 @@
     //Crée un nouvel objet FormData à partir du formulaire contenu dans la variable "formInscription"
     const dataForm = new FormData(formInscription);
 
-    const name = dataForm.get("name");
     // Crée un nouvel objet Headers pour définir les en-têtes de la requête HTTP
     const myHeaders = new Headers();
     // Ajoute l'en-tête "Content-Type" avec la valeur "application/json"
@@ -139,7 +138,6 @@
           return response.json();
         } else {
           alert("Vos informations ne permettent pas de vous inscrire");
-          return;
         }
       })
       //excution fléchée pour plusieurs lignes
