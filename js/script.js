@@ -21,19 +21,19 @@ function getToken() {
   return getCookie(tokenCookieName);
 }
 function setCookie(name, value, days) {
-  var expires = "";
+  let expires = "";
   if (days) {
-    var date = new Date();
+    let date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
     expires = "; expires=" + date.toUTCString();
   }
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 function getCookie(name) {
-  var nameEQ = name + "=";
-  var ca = document.cookie.split(";");
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
+  let nameEQ = name + "=";
+  let ca = document.cookie.split(";");
+  for (const element of ca) {
+    let c = element;
     while (c.charAt(0) == " ") c = c.substring(1, c.length);
     if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
   }
@@ -44,7 +44,7 @@ function eraseCookie(name) {
 }
 
 function isConnected() {
-  if (getToken() == null || getToken == undefined) {
+  if (getToken() == null || getToken() == undefined) {
     return false;
   } else {
     return true;

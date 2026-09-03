@@ -13,7 +13,6 @@
     //Crée un nouvel objet FormData à partir du formulaire contenu dans la variable "formInscription"
     const dataForm = new FormData(signinForm);
 
-    const name = dataForm.get("name");
     // Crée un nouvel objet Headers pour définir les en-têtes de la requête HTTP
     const myHeaders = new Headers();
     // Ajoute l'en-tête "Content-Type" avec la valeur "application/json"
@@ -38,8 +37,8 @@
         if (response.ok) {
           return response.json();
         } else {
-          EmailInput.classList.add("is-invalid");
-          PasswordInput.classList.add("is-invalid"); // red
+          inputEmail.classList.add("is-invalid");
+          inputPassword.classList.add("is-invalid"); // red
           return;
         }
       })
