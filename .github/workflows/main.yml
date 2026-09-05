@@ -20,6 +20,7 @@ jobs:
         username: quai-antiqueg
         password: ${{ secrets.ftp_password }}
         protocol: ftps
+        port: 21
         server-dir: /www/
         exclude:  |
           **/.git*
