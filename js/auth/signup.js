@@ -25,13 +25,7 @@
     const passwordOK = validatePassword(inputPassword); //appel à la vérification du PWD au bon format
     const passwordConfirmOK = validateConfirmationPassword(inputPassword, inputValidationPassword); //appel à la vérification entre les 2 PWD identiques
 
-    if (
-      nomOK &&
-      prenomOK &&
-      mailOK &&
-      passwordOK &&
-      passwordConfirmOK
-    ) // si les 3 éléments sont ok alors enable btn inscription//
+    if (nomOK && prenomOK && mailOK && passwordOK && passwordConfirmOK) // si les 3 éléments sont ok alors enable btn inscription//
     {
       btnValidation.disabled = false;
       return true;
@@ -134,7 +128,6 @@
     fetch(apiUrl + "registration", requestOptions)
       .then((response) => {
         if (response.ok) {
-          //
           return response.json();
         } else {
           alert("Vos informations ne permettent pas de vous inscrire");
